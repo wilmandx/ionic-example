@@ -100,7 +100,7 @@ var AboutPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-about',template:/*ion-inline-start:"C:\DATA\03-Tutoriels\ionic\tabs-menu-example\src\pages\about\about.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      About\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\DATA\03-Tutoriels\ionic\tabs-menu-example\src\pages\about\about.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
     ], AboutPage);
     return AboutPage;
 }());
@@ -135,7 +135,7 @@ var ContactPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-contact',template:/*ion-inline-start:"C:\DATA\03-Tutoriels\ionic\tabs-menu-example\src\pages\contact\contact.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Contact\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <ion-list-header>Follow us on Twitter</ion-list-header>\n    <ion-item>\n      <ion-icon name="ionic" item-start></ion-icon>\n      @ionicframework\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"C:\DATA\03-Tutoriels\ionic\tabs-menu-example\src\pages\contact\contact.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
     ], ContactPage);
     return ContactPage;
 }());
@@ -239,7 +239,7 @@ var AppModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(191);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(194);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_about_about__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(99);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -266,31 +266,15 @@ var MyApp = (function () {
         });
         // used for an example of ngFor and navigation
         this.pages = [
-            { title: 'Autres apps', component: __WEBPACK_IMPORTED_MODULE_5__pages_about_about__["a" /* AboutPage */] },
-            { title: 'Partager sur facebook', component: __WEBPACK_IMPORTED_MODULE_5__pages_about_about__["a" /* AboutPage */] },
+            { title: 'Home', component: __WEBPACK_IMPORTED_MODULE_5__pages_home_home__["a" /* HomePage */] },
         ];
     }
-    MyApp.prototype.openPage = function (page) {
-        // Reset the content nav to have just this page
-        // we wouldn't want the back button to show in this scenario
-        this.nav.setRoot(page.component);
-    };
-    MyApp.prototype.openHome = function () {
-        // Reset the content nav to have just this page
-        // we wouldn't want the back button to show in this scenario
-        this.nav.setRoot(__WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__["a" /* TabsPage */]);
-    };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Nav */]),
-        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Nav */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Nav */]) === "function" && _a || Object)
-    ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\DATA\03-Tutoriels\ionic\tabs-menu-example\src\app\app.html"*/'<ion-menu [content]="content">\n    <ion-header>\n      <ion-toolbar>\n        <ion-title>Menu</ion-title>\n      </ion-toolbar>\n    </ion-header>\n  \n    <ion-content>\n      <ion-list>\n            <button menuClose ion-item (click)="openHome()">\n                Home\n            </button>\n        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n          {{p.title}}\n        </button>\n      </ion-list>\n    </ion-content>\n  \n  </ion-menu>\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n'/*ion-inline-end:"C:\DATA\03-Tutoriels\ionic\tabs-menu-example\src\app\app.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Platform */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
     return MyApp;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=app.component.js.map
@@ -316,25 +300,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var HomePage = (function () {
-    function HomePage(toastCtrl, navCtrl) {
-        this.toastCtrl = toastCtrl;
+    function HomePage(navCtrl) {
         this.navCtrl = navCtrl;
     }
-    HomePage.prototype.playAction = function (lettre) {
-        var toast = this.toastCtrl.create({
-            message: 'User was added successfully=' + lettre,
-            duration: 3000
-        });
-        toast.present();
-    };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\DATA\03-Tutoriels\ionic\tabs-menu-example\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <h2>Welcome to Ionic!</h2>\n  <div>\n    <button ion-button color="secondary" small round icon-end>\n      Secondary\n      <ion-icon name=\'star\'></ion-icon>\n    </button>\n  </div>\n  <div>\n    <button ion-button color="danger" small round icon-end>\n      Danger\n      <ion-icon name=\'star\'></ion-icon>\n    </button>\n  </div>\n  <button ion-button color="dark" small round icon-end>\n    Dark\n    <ion-icon name=\'star\'></ion-icon>\n  </button>\n  <ion-grid>\n      <ion-row>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline (click)="playAction(\'a\')">a</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n      </ion-row>\n      <ion-row>\n          <ion-col col-1 no-padding><button ion-button color="secondary" small outline (click)="playAction(\'a\')">w</button></ion-col>\n          <ion-col col-1 no-padding><button ion-button color="secondary" small outline>w</button></ion-col>\n          <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n          <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n      </ion-row>\n    </ion-grid>\n</ion-content>'/*ion-inline-end:"C:\DATA\03-Tutoriels\ionic\tabs-menu-example\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"C:\DATA\03-Tutoriels\ionic\tabs-menu-example\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <p></p>\n  <ion-badge item-end>Exception</ion-badge>\n  <p>Les sfs seww qoewriew werie oew riewr iewr iewrwoeriwooer ewr er</p>\n  <div>\n    <button ion-button color="secondary" small round icon-end>\n      Secondary\n      <ion-icon name=\'star\'></ion-icon>\n    </button>\n  </div>\n  <div>\n    <button ion-button color="danger" small round icon-end>\n      Danger\n      <ion-icon name=\'star\'></ion-icon>\n    </button>\n  </div>\n  <button ion-button color="dark" small round icon-end>\n    Dark\n    <ion-icon name=\'star\'></ion-icon>\n  </button>\n  <ion-grid>\n      <ion-row>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline (click)="playAction(\'a\')">a</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n      </ion-row>\n      <ion-row>\n          <ion-col col-1 no-padding (click)="playAction(\'a\')">w</ion-col>\n          <ion-col col-1 no-padding><button ion-button color="secondary" small outline>w</button></ion-col>\n          <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n          <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n      </ion-row>\n    </ion-grid>\n</ion-content>'/*ion-inline-end:"C:\DATA\03-Tutoriels\ionic\tabs-menu-example\src\pages\home\home.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ToastController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
     ], HomePage);
     return HomePage;
-    var _a, _b;
 }());
 
 //# sourceMappingURL=home.js.map

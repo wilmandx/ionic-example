@@ -11,7 +11,7 @@ export class HomePage {
 
   }
 
-  playAction(lettre:string){
+  playAction(lettre:string){ 
     let toast = this.toastCtrl.create({
       message: 'User was added successfully='+lettre,
       duration: 3000
