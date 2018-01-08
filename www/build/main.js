@@ -316,16 +316,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var HomePage = (function () {
-    function HomePage(navCtrl) {
+    function HomePage(toastCtrl, navCtrl) {
+        this.toastCtrl = toastCtrl;
         this.navCtrl = navCtrl;
     }
+    HomePage.prototype.playAction = function (lettre) {
+        var toast = this.toastCtrl.create({
+            message: 'User was added successfully=' + lettre,
+            duration: 3000
+        });
+        toast.present();
+    };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\DATA\03-Tutoriels\ionic\tabs-menu-example\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <h2>Welcome to Ionic!</h2>\n  <p>\n    This starter project comes with simple tabs-based layout for apps\n    that are going to primarily use a Tabbed UI.\n  </p>\n  <p>\n    Take a look at the <code>src/pages/</code> directory to add or change tabs,\n    update any existing page or create new pages.\n  </p>\n</ion-content>\n'/*ion-inline-end:"C:\DATA\03-Tutoriels\ionic\tabs-menu-example\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"C:\DATA\03-Tutoriels\ionic\tabs-menu-example\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <h2>Welcome to Ionic!</h2>\n  <div>\n    <button ion-button color="secondary" small round icon-end>\n      Secondary\n      <ion-icon name=\'star\'></ion-icon>\n    </button>\n  </div>\n  <div>\n    <button ion-button color="danger" small round icon-end>\n      Danger\n      <ion-icon name=\'star\'></ion-icon>\n    </button>\n  </div>\n  <button ion-button color="dark" small round icon-end>\n    Dark\n    <ion-icon name=\'star\'></ion-icon>\n  </button>\n  <ion-grid>\n      <ion-row>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline (click)="playAction(\'a\')">a</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n      </ion-row>\n      <ion-row>\n          <ion-col col-1 no-padding><button ion-button color="secondary" small outline (click)="playAction(\'a\')">w</button></ion-col>\n          <ion-col col-1 no-padding><button ion-button color="secondary" small outline>w</button></ion-col>\n          <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n          <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n      </ion-row>\n    </ion-grid>\n</ion-content>'/*ion-inline-end:"C:\DATA\03-Tutoriels\ionic\tabs-menu-example\src\pages\home\home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ToastController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _b || Object])
     ], HomePage);
     return HomePage;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=home.js.map

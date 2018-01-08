@@ -42,6 +42,19 @@ $colors: (
 );
 
 
+$grid-columns:               10 !default;
+
+$grid-padding-width:         10px !default;
+
+$grid-padding-widths: (
+  xs: $grid-padding-width,
+  sm: $grid-padding-width,
+  md: $grid-padding-width,
+  lg: $grid-padding-width,
+  xl: $grid-padding-width
+) !default;
+
+
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here

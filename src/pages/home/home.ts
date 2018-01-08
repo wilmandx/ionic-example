@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ToastController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -7,8 +7,16 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public toastCtrl: ToastController,public navCtrl: NavController) {
 
+  }
+
+  playAction(lettre:string){
+    let toast = this.toastCtrl.create({
+      message: 'User was added successfully='+lettre,
+      duration: 3000
+    });
+    toast.present();
   }
 
 }

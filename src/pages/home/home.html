@@ -7,14 +7,42 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
   <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <div>
+    <button ion-button color="secondary" small round icon-end>
+      Secondary
+      <ion-icon name='star'></ion-icon>
+    </button>
+  </div>
+  <div>
+    <button ion-button color="danger" small round icon-end>
+      Danger
+      <ion-icon name='star'></ion-icon>
+    </button>
+  </div>
+  <button ion-button color="dark" small round icon-end>
+    Dark
+    <ion-icon name='star'></ion-icon>
+  </button>
+  <ion-grid>
+      <ion-row>
+        <ion-col col-1 no-padding><button ion-button color="secondary" small outline (click)="playAction('a')">a</button></ion-col>
+        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>
+        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>
+        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>
+        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>
+        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>
+        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>
+        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>
+        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>
+        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col col-1 no-padding><button ion-button color="secondary" small outline (click)="playAction('a')">w</button></ion-col>
+          <ion-col col-1 no-padding><button ion-button color="secondary" small outline>w</button></ion-col>
+          <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>
+          <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>
+      </ion-row>
+    </ion-grid>
 </ion-content>
