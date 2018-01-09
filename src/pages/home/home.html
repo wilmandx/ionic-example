@@ -4,10 +4,51 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Home</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only color="royal">
+          <ion-icon name="person-add"></ion-icon>
+        </button>
+      </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
+
+    <ion-card>        
+            <ion-card-content>
+              <ion-card-title>
+                [@]
+              </ion-card-title>
+              <p>
+                The most popular industrial group ever, and largely responsible for bringing
+              </p>
+            </ion-card-content>
+        
+            <ion-row no-padding>
+              <ion-col>
+                <button ion-button clear small color="danger" icon-start>
+                  <ion-icon name='star'></ion-icon>
+                  Favorite
+                </button><br/>
+                <button ion-button clear small color="danger" icon-start>
+                    <ion-icon name='star'></ion-icon>
+                    Ejemplo
+                  </button>
+                  
+                </ion-col>
+            </ion-row>
+            
+              <ion-row no-padding>
+              <ion-col text-right>
+                <button ion-button clear small color="danger" icon-start>
+                  <ion-icon name='share-alt'></ion-icon>
+                  Share
+                </button>
+              </ion-col>
+            </ion-row>
+        
+          </ion-card>
+  <div style="display:none">
   <p></p>
   <ion-badge item-end>Exception</ion-badge>
   <p>Les sfs seww qoewriew werie oew riewr iewr iewrwoeriwooer ewr er</p>
@@ -27,7 +68,13 @@
     Dark
     <ion-icon name='star'></ion-icon>
   </button>
+</div>
   <ion-grid>
+      <ion-row>
+          <ion-col col-12 no-padding>
+              <ion-badge item-end>Voyalles</ion-badge>
+          </ion-col>
+      </ion-row>
       <ion-row>
         <ion-col col-1 no-padding><button ion-button color="secondary" small outline (click)="playAction('a')">a</button></ion-col>
         <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>
@@ -39,6 +86,11 @@
         <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>
         <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>
         <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col col-12 no-padding>
+              <ion-badge item-end>Conson</ion-badge>
+          </ion-col>
       </ion-row>
       <ion-row>
           <ion-col col-1 no-padding (click)="playAction('a')">w</ion-col>
