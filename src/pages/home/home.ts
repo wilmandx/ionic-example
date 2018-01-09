@@ -17,6 +17,8 @@ export class HomePage {
       duration: 3000
     });
     toast.present();
+    var audio = new Audio('./assets/sound/battery.wav');
+    audio.play();
   }
 
 }
