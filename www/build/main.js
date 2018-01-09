@@ -116,6 +116,7 @@ var ContactPage = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_sounds_service__ = __webpack_require__(274);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -127,27 +128,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var HomePage = (function () {
-    function HomePage(toastCtrl, navCtrl) {
+    function HomePage(toastCtrl, navCtrl, soundsService) {
         this.toastCtrl = toastCtrl;
         this.navCtrl = navCtrl;
+        this.soundsService = soundsService;
+        this.currentSound = soundsService.getSound('a');
     }
     HomePage.prototype.playAction = function (lettre) {
         var toast = this.toastCtrl.create({
             message: 'User was added successfully=' + lettre,
             duration: 3000
         });
+        this.currentSound = this.soundsService.getSound(lettre);
         toast.present();
         var audio = new Audio('./assets/sound/battery.wav');
         audio.play();
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\DATA\03-Tutoriels\ionic\tabs-menu-example\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Home</ion-title>\n    <ion-buttons end>\n        <button ion-button icon-only color="royal">\n          <ion-icon name="person-add"></ion-icon>\n        </button>\n      </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n\n    <ion-card>        \n            <ion-card-content>\n              <ion-card-title>\n                [@]\n              </ion-card-title>\n              <p>\n                The most popular industrial group ever, and largely responsible for bringing\n              </p>\n            </ion-card-content>\n        \n            <ion-row no-padding>\n              <ion-col>\n                <button ion-button clear small color="danger" icon-start>\n                  <ion-icon name=\'star\'></ion-icon>\n                  Favorite\n                </button><br/>\n                <button ion-button clear small color="danger" icon-start>\n                    <ion-icon name=\'star\'></ion-icon>\n                    Ejemplo\n                  </button>\n                  \n                </ion-col>\n            </ion-row>\n            \n              <ion-row no-padding>\n              <ion-col text-right>\n                <button ion-button clear small color="danger" icon-start>\n                  <ion-icon name=\'share-alt\'></ion-icon>\n                  Share\n                </button>\n              </ion-col>\n            </ion-row>\n        \n          </ion-card>\n  <div style="display:none">\n  <p></p>\n  <ion-badge item-end>Exception</ion-badge>\n  <p>Les sfs seww qoewriew werie oew riewr iewr iewrwoeriwooer ewr er</p>\n  <div>\n    <button ion-button color="secondary" small round icon-end>\n      Secondary\n      <ion-icon name=\'star\'></ion-icon>\n    </button>\n  </div>\n  <div>\n    <button ion-button color="danger" small round icon-end>\n      Danger\n      <ion-icon name=\'star\'></ion-icon>\n    </button>\n  </div>\n  <button ion-button color="dark" small round icon-end>\n    Dark\n    <ion-icon name=\'star\'></ion-icon>\n  </button>\n</div>\n  <ion-grid>\n      <ion-row>\n          <ion-col col-12 no-padding>\n              <ion-badge item-end>Voyalles</ion-badge>\n          </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline (click)="playAction(\'a\')">a</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n        <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n      </ion-row>\n      <ion-row>\n          <ion-col col-12 no-padding>\n              <ion-badge item-end>Conson</ion-badge>\n          </ion-col>\n      </ion-row>\n      <ion-row>\n          <ion-col col-1 no-padding (click)="playAction(\'a\')">w</ion-col>\n          <ion-col col-1 no-padding><button ion-button color="secondary" small outline>w</button></ion-col>\n          <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n          <ion-col col-1 no-padding><button ion-button color="secondary" small outline>b</button></ion-col>\n      </ion-row>\n    </ion-grid>\n</ion-content>'/*ion-inline-end:"C:\DATA\03-Tutoriels\ionic\tabs-menu-example\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"C:\DATA\03-Tutoriels\ionic\tabs-menu-example\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Home</ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only color="royal">\n        <ion-icon name="person-add"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n\n  <ion-card>\n    <ion-card-content>\n      <ion-card-title>\n        [{{currentSound.symbol}}]\n      </ion-card-title>\n      <p>\n        {{currentSound.exception}}\n      </p>\n    </ion-card-content>\n\n    <ion-row no-padding>\n      <ion-col>\n        <button ion-button clear small color="danger" icon-start>\n          <ion-icon name=\'star\'></ion-icon>\n          {{currentSound.examples[0].text}}\n        </button>\n        <br/>\n        <button ion-button clear small color="danger" icon-start>\n          <ion-icon name=\'star\'></ion-icon>\n          {{currentSound.examples[1].text}}\n        </button>\n      </ion-col>\n    </ion-row>\n\n    <ion-row no-padding>\n      <ion-col text-right>\n        <button ion-button clear small color="danger" icon-start>\n          <ion-icon name=\'share-alt\'></ion-icon>\n          Share\n        </button>\n      </ion-col>\n    </ion-row>\n\n  </ion-card>\n\n  <ion-grid>\n    <ion-row>\n      <ion-col col-12 no-padding>\n        <ion-badge item-end>Voyalles</ion-badge>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-1 no-padding>\n        <button ion-button color="secondary" small outline (click)="playAction(\'a\')">a</button>\n      </ion-col>\n      <ion-col col-1 no-padding>\n        <button ion-button color="secondary" small outline (click)="playAction(\'b\')">b</button>\n      </ion-col>\n      <ion-col col-1 no-padding>\n        <button ion-button color="secondary" small outline>b</button>\n      </ion-col>\n      <ion-col col-1 no-padding>\n        <button ion-button color="secondary" small outline>b</button>\n      </ion-col>\n      <ion-col col-1 no-padding>\n        <button ion-button color="secondary" small outline>b</button>\n      </ion-col>\n      <ion-col col-1 no-padding>\n        <button ion-button color="secondary" small outline>b</button>\n      </ion-col>\n      <ion-col col-1 no-padding>\n        <button ion-button color="secondary" small outline>b</button>\n      </ion-col>\n      <ion-col col-1 no-padding>\n        <button ion-button color="secondary" small outline>b</button>\n      </ion-col>\n      <ion-col col-1 no-padding>\n        <button ion-button color="secondary" small outline>b</button>\n      </ion-col>\n      <ion-col col-1 no-padding>\n        <button ion-button color="secondary" small outline>b</button>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 no-padding>\n        <ion-badge item-end>Conson</ion-badge>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-1 no-padding (click)="playAction(\'a\')">w</ion-col>\n      <ion-col col-1 no-padding>\n        <button ion-button color="secondary" small outline>w</button>\n      </ion-col>\n      <ion-col col-1 no-padding>\n        <button ion-button color="secondary" small outline>b</button>\n      </ion-col>\n      <ion-col col-1 no-padding>\n        <button ion-button color="secondary" small outline>b</button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>'/*ion-inline-end:"C:\DATA\03-Tutoriels\ionic\tabs-menu-example\src\pages\home\home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ToastController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_sounds_service__["a" /* SoundsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_sounds_service__["a" /* SoundsService */]) === "function" && _c || Object])
     ], HomePage);
     return HomePage;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=home.js.map
@@ -183,12 +189,14 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_tabs_tabs__ = __webpack_require__(195);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__ = __webpack_require__(191);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_sounds_service__ = __webpack_require__(274);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -228,6 +236,7 @@ var AppModule = (function () {
             providers: [
                 __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__["a" /* SplashScreen */],
+                __WEBPACK_IMPORTED_MODULE_10__services_sounds_service__["a" /* SoundsService */],
                 { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] }
             ]
         })
@@ -303,6 +312,55 @@ var MyApp = (function () {
 }());
 
 //# sourceMappingURL=app.component.js.map
+
+/***/ }),
+
+/***/ 274:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SoundsService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(275);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var SoundsService = (function () {
+    function SoundsService() {
+        this.soundsArray = new Array();
+        this.soundsArray['a'] = {
+            symbol: '@',
+            exception: 'text 1',
+            examples: [{ text: 'one', sound: 'one' }, { text: 'two', sound: 'two' }],
+            sound: ''
+        };
+        this.soundsArray['b'] = {
+            symbol: 'D',
+            exception: 'text 2',
+            examples: [{ text: 'one2', sound: 'one' }, { text: 'two2', sound: 'two' }],
+            sound: ''
+        };
+    }
+    SoundsService.prototype.getSound = function (sound) {
+        return this.soundsArray[sound];
+    };
+    SoundsService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [])
+    ], SoundsService);
+    return SoundsService;
+}());
+
+//# sourceMappingURL=sounds.service.js.map
 
 /***/ }),
 
